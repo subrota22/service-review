@@ -75,7 +75,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## live website link
 
-https://computer-product-services.firebaseapp.com/
+https://computer-product-services.web.app/
 
 ## client side repository link
 
