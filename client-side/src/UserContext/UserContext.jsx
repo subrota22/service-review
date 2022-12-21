@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createContext } from 'react';
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile} from "firebase/auth" ;
+import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, updateProfile} from "firebase/auth" ;
 import app from '../components/firebase.config/firebase.config';
 export const AuthContext = createContext() ;
 const auth = getAuth(app)
@@ -57,9 +57,12 @@ return () => unsubscribe() ;
 const logOutUser = () => {
 return auth.signOut() ;
 }
+const  updatePassword = (email) => {
+    return sendPasswordResetEmail( auth  , email ) ;
+    }
 //share data by authInformation object variable 
 const authInformation = {
-createUser , updateUser , logInWithGoogle , logInWithGithub , loginUser ,
+createUser , updateUser , updatePassword , logInWithGoogle , logInWithGithub , loginUser ,
 user , logOutUser , setUser , setLoading , loading 
 } ;
 return (

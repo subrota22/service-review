@@ -13,7 +13,7 @@ setService(newService) ;
 }
 const handleFormSubmit = (event) => {
 event.preventDefault() ;
-fetch(`https://lotus-pc-service.vercel.app/services` , {
+fetch(` https://lotus-pc-service-subrota22.vercel.app/services` , {
 method:"POST" ,
 headers:{
 'content-type' : 'application/json' 

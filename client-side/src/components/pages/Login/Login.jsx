@@ -127,7 +127,12 @@ placeholder="Please enter your email" className="input input-bordered input-prim
 Register now 
 </NavLink>
 </label>
-
+<label className="flex mt-6">
+<span> If you forgot password please click on ? </span>
+<NavLink to="/reset-password">
+Reset password
+</NavLink>
+</label>
 </form>
 </div>
 </div>

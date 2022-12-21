@@ -43,7 +43,7 @@ setReview(newReview) ;
 //post review data
 const handleReviewForm = (event) => {
 event.preventDefault() ;
-fetch(`https://lotus-pc-service.vercel.app/reviews` , {
+fetch(` https://lotus-pc-service-subrota22.vercel.app/reviews` , {
 method:"POST" ,
 headers:{
 'content-type' : 'application/json'

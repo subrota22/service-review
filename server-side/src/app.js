@@ -113,9 +113,8 @@ const id = req.params.id ;
 const upateData = req.body ;
 const {
 serviceName , servicePrice , serviceDescription ,
-serviceRating , servicePicture , feedbackMessage
+reviewerRatings , servicePicture , feedbackMessage 
 } = upateData ;
-
 const query = {_id : ObjectId(id)} ;
 
 const reviewUpdateDocs = {
@@ -124,8 +123,8 @@ serviceName:serviceName ,
 servicePicture:servicePicture ,
 servicePrice:servicePrice ,
 serviceDescription:serviceDescription ,
-reviewerRatings : serviceRating , 
-feedbackMessage:feedbackMessage , 
+reviewerRatings:reviewerRatings , 
+feedbackMessage:feedbackMessage ,  
 }
 }
 // console.log(reviewUpdateDocs);
@@ -153,7 +152,7 @@ const token = jwtToken.sign(email, process.env.SECRET_TOKEN , {
 
 res.status(201).send({token}) ;
 })
-// ???
+
 } catch (error) {
 console.log(error);
 }

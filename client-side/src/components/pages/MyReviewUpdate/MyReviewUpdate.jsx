@@ -1,14 +1,16 @@
 import React, {   useState } from 'react';
 import {Helmet} from "react-helmet";
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData , useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 const MyReviewUpdate = () => {
 const reviewData = useLoaderData() ;
-console.log(reviewData); // 2 + 2 + 2 = 6 ==> 53 
+const navigate = useNavigate() ;
+ console.log(reviewData); // 2 + 2 + 2 = 6 ==> 53 
 const {servicePicture , servicePrice  , _id , 
   serviceDescription , serviceName,
   reviewerRatings , feedbackMessage} = reviewData ;
-const [service , setService] = useState({}) ;
+const [service , setService] = useState(reviewData) ;
+// console.log(service);
 const handleOnchangeInputFeild = (event) =>{
 const feild = event.target.name ;
 const value = event.target.value ;
@@ -18,7 +20,9 @@ setService(newService) ;
 }
 const handleFormSubmit = (event) => {
 event.preventDefault() ;
-fetch(`https://lotus-pc-service.vercel.app/my-reviews-edit/${_id}` , {
+
+// https://lotus-pc-service-subrota22.vercel.app
+fetch(`https://lotus-pc-service-subrota22.vercel.app/my-reviews-edit/${_id}` , {
 method:"PUT" ,
 headers:{
 'content-type' : 'application/json' 
@@ -27,14 +31,14 @@ body:JSON.stringify(service)
 })
 .then(res => res.json())
 .then(data => {
-console.log(data);
+// console.log(data);
 if(data.modifiedCount > 0 ) {
 Swal.fire({
 icon:"success" ,
 title:"Your review updated succsssfully !! " ,
 timer: 4000 , 
 })
-event.target.reset() ;
+navigate("/my-review") ;
 }
 } )
 .catch((error) => {
@@ -91,7 +95,7 @@ className="input input-bordered input-success" required/>
 <span className="label-text">Ratings </span>
 </label>
 <input type="number" min="1" max="5" defaultValue={reviewerRatings}
-name='serviceRating'  onChange={handleOnchangeInputFeild}  
+name='reviewerRatings'  onChange={handleOnchangeInputFeild}  
 placeholder="Enter service ratings"
 className="input input-bordered w-full input-success" required />
 </div>
@@ -111,8 +115,8 @@ className="textarea textarea-success px-6 py-6" rows="4" required />
 <label className="label">
 <span className="label-text"> Feedback messgae  </span>
 </label>
-<textarea min="80" max="400" id="scrollbarDesign" defaultValue={feedbackMessage} name='feedbackMessage ' 
-onChange={handleOnchangeInputFeild}  placeholder="Enter service desciption" 
+<textarea min="80" max="400" id="scrollbarDesign" defaultValue={feedbackMessage} name='feedbackMessage' 
+onChange={handleOnchangeInputFeild}  placeholder="Enter feedback messgae " 
 className="textarea textarea-success px-6 py-6" rows="4" required />
 </div>
 

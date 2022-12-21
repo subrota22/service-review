@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+
 import { FaStar } from 'react-icons/fa';
 import "./UserReviews.css";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+// import { useQuery } from '@tanstack/react-query';
+// import PageLoader from '../share/PageLoader/PageLoader';
+import { useEffect, useState } from 'react';
 const UserReviews = ({reviewId  , serviceName }) => {
 const [reviews , setReviews]  = useState([]) ;
 useEffect(() => {
-fetch(`https://lotus-pc-service.vercel.app/reviews/${reviewId}`)
+fetch(` https://lotus-pc-service-subrota22.vercel.app/reviews/${reviewId}`)
 .then(res => res.json())
 .then(data =>{
 setReviews(data) ;
@@ -13,6 +16,17 @@ setReviews(data) ;
 .catch(error => console.log(error))
 } , [reviewId])
 //https://i.ibb.co/Bw3wx3d/imnot.webp
+
+// const {data:reviews = [reviewId] , isLoading} = useQuery({
+// queryFn: fetch(` https://lotus-pc-service-subrota22.vercel.app/reviews/${reviewId}`)
+// .then(res => res.json())
+// .then(data => data) 
+// .catch(error => console.error(error)) 
+// })
+// if(isLoading) {
+// return <PageLoader></PageLoader>
+// }
+
 return (
 <>
 {
@@ -36,14 +50,14 @@ reviews.map(review  =>
 <figure>
 <PhotoProvider>
 <PhotoView src={review.reviewerImage }>
-<img src={review.reviewerImage ? review.reviewerImage : "https://i.ibb.co/Pwh4tt1/noimgs.png" } alt="Shoes"  className='h-72  hover:cursor-pointer  w-full rounded'/>
+<img src={review.reviewerImage ? review.reviewerImage : "https://i.ibb.co/7nNB7L7/images.jpg" } alt=""  className='h-72  hover:cursor-pointer  w-full rounded'/>
 </PhotoView>
 </PhotoProvider>
 </figure>
 <div className="card-body">
-<h2 className="card-title">Name : {review.reviewerName ? review.reviewerName : "name not found"}</h2>
-<h2 className="card-title">Email :{review.reviewerEmail ? review.reviewerEmail : "email not found"}</h2>
-<p>{review.feedbackMessage}</p>
+<h2 className="card-title">Name : {review?.reviewerName ? review?.reviewerName : "name not found"}</h2>
+<h2 className="card-title">Email :{review?.reviewerEmail ? review?.reviewerEmail : "email not found"}</h2>
+<p>{review?.feedbackMessage}</p>
 <div className="flex">
 
 <div className="mt-2 flex">

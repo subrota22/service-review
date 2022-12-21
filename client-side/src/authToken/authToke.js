@@ -3,7 +3,7 @@ export const authToken = (email) => {
 const currentUser = {
 email:email , 
 }
-fetch(`https://lotus-pc-service.vercel.app/authentication` , {
+fetch(` https://lotus-pc-service-subrota22.vercel.app/authentication` , {
 method:"POST" , 
 headers:{
  'content-type' : 'application/json'
