@@ -75,7 +75,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## live website link
 
-https://computer-product-services.web.app/
+https://green-computers-1a8a8.firebaseapp.com/
 
 ## liver server side link
 
@@ -83,11 +83,11 @@ https://lotus-pc-service.vercel.app/
 
 ## client side repository link
 
-https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-subrota22
+https://github.com/subrota22/all-green-computers/tree/main/client
 
 ## server side repository link
 
-https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-subrota22
+https://github.com/subrota22/all-green-computers/tree/main/server
 
 ## First of all I am create a react app using npx create-react-app app-name
 ## I am used react-router-dom to manage single page application 
@@ -100,3 +100,4 @@ https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-
 
 
 
+//hell0
