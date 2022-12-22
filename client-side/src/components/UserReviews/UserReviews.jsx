@@ -2,31 +2,25 @@
 import { FaStar } from 'react-icons/fa';
 import "./UserReviews.css";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-// import { useQuery } from '@tanstack/react-query';
-// import PageLoader from '../share/PageLoader/PageLoader';
+
 import { useEffect, useState } from 'react';
+import PageLoader from '../share/PageLoader/PageLoader';
 const UserReviews = ({reviewId  , serviceName }) => {
 const [reviews , setReviews]  = useState([]) ;
+const [pageLoad , setPageLoad]  = useState(true) ;
 useEffect(() => {
 fetch(` https://lotus-pc-service-subrota22.vercel.app/reviews/${reviewId}`)
 .then(res => res.json())
 .then(data =>{
 setReviews(data) ;
+setPageLoad(false) ;
 }) 
 .catch(error => console.log(error))
 } , [reviewId])
 //https://i.ibb.co/Bw3wx3d/imnot.webp
-
-// const {data:reviews = [reviewId] , isLoading} = useQuery({
-// queryFn: fetch(` https://lotus-pc-service-subrota22.vercel.app/reviews/${reviewId}`)
-// .then(res => res.json())
-// .then(data => data) 
-// .catch(error => console.error(error)) 
-// })
-// if(isLoading) {
-// return <PageLoader></PageLoader>
-// }
-
+if(pageLoad){
+return <PageLoader></PageLoader>
+}
 return (
 <>
 {
