@@ -11,7 +11,7 @@ const Banner = () => {
       <h2 className='text-md'> Cause we are experienced <br />
        and we have 3 years real time experience <br />
         to work hard  and carefully. </h2>
-        <button className="btn btn-primary m-3 text-white w-80">Get start</button>
+        <button className="btn btn-primary m-3 text-white max-w-screen-xl">Get start</button>
     </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide5" className="btn btn-circle btn-primary text-white ">❮❮</a> 
@@ -25,7 +25,7 @@ const Banner = () => {
       <h2 className='text-md'> Cause we are experienced <br />
        and we have 3 years real time experience <br />
         to work hard  and carefully. </h2>
-        <button className="btn btn-primary m-3 text-white w-80">Get start</button>
+        <button className="btn btn-primary m-3 text-white max-w-screen-xl">Get start</button>
     </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide1" className="btn btn-circle btn-primary text-white ">❮❮</a> 
@@ -39,7 +39,7 @@ const Banner = () => {
       <h2 className='text-md'> Cause we are experienced <br />
        and we have 3 years real time experience <br />
         to work hard  and carefully. </h2>
-        <button className="btn btn-primary m-3 text-white w-80">Get start</button>
+        <button className="btn btn-primary m-3 text-white max-w-screen-xl">Get start</button>
     </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide2" className="btn btn-circle btn-primary text-white ">❮❮</a> 
@@ -53,7 +53,7 @@ const Banner = () => {
       <h2 className='text-md'> Cause we are experienced <br />
        and we have 3 years real time experience <br />
         to work hard  and carefully. </h2>
-        <button className="btn btn-primary m-3 text-white w-80">Get start</button>
+        <button className="btn btn-primary m-3 text-white max-w-screen-xl">Get start</button>
     </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide3" className="btn btn-circle btn-primary text-white ">❮❮</a> 
@@ -68,7 +68,7 @@ const Banner = () => {
       <h2 className='text-md'> Cause we are experienced <br />
        and we have 3 years real time experience <br />
         to work hard  and carefully. </h2>
-        <button className="btn btn-primary m-3 text-white w-80">Get start</button>
+        <button className="btn btn-primary m-3 text-white max-w-screen-xl">Get start</button>
     </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide4" className="btn btn-circle btn-primary text-white ">❮❮</a> 
